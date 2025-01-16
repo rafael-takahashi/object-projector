@@ -7,10 +7,13 @@ def plot_3d_obj(file_path):
     # Load the .obj file using trimesh
     mesh = trimesh.load_mesh(file_path)
 
+    mesh.show()
+
+    '''
     # Get vertices and faces
     vertices = mesh.vertices
     faces = mesh.faces
-
+    
     # Create a 3D plot
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
@@ -32,9 +35,8 @@ def plot_3d_obj(file_path):
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
-    ax.set_title('3D OBJ Plot')
-
-    plt.show()
+    ax.set_title('.obj Plot')
+    '''
 
 # Replace with your .obj file path
 plot_3d_obj('models/cube.obj')  # Adjust the file path as needed
