@@ -2,18 +2,47 @@ import trimesh
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
-# Function to read an OBJ file and plot it
+def get_obj_data(file_path):
+    # Load the .obj file using trimesh
+    mesh = trimesh.load_mesh(file_path)
+
+    # Get object data
+    vertices = mesh.vertices
+    vertice_quantity = len(vertices)
+    faces = mesh.faces
+    face_quantity = len(faces)
+    vertices_per_faces = [len(face) for face in faces]
+    face_vertices = [vertice for vertice in faces]
+
+    print(f"NV: {vertice_quantity}")
+    print("========================================")
+    print(f"X[i], Y[i], Z[i]: \n {vertices}")
+    print("========================================")
+    #print(f" {faces}")
+    #print("========================================")
+    print(f"NS: {face_quantity}")
+    print("========================================")
+    print(f"NVPS[i]: {vertices_per_faces}")
+    print("========================================")
+    for i in range(face_quantity):
+        print(f"VS[{i}]: {face_vertices[i]}")
+
+get_obj_data('models/cube.obj')
+
+projection_center = [1, -1, 1]
+
+p1 = [1, 0, 0]
+p2 = [0, 1, 0]
+p3 = [0, 0, 1]
+
 def plot_3d_obj(file_path):
     # Load the .obj file using trimesh
     mesh = trimesh.load_mesh(file_path)
 
-    mesh.show()
-
-    '''
-    # Get vertices and faces
+    # Get object data
     vertices = mesh.vertices
     faces = mesh.faces
-    
+
     # Create a 3D plot
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
@@ -36,7 +65,5 @@ def plot_3d_obj(file_path):
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
     ax.set_title('.obj Plot')
-    '''
 
-# Replace with your .obj file path
-plot_3d_obj('models/cube.obj')  # Adjust the file path as needed
+    #plt.show()
