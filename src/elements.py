@@ -8,7 +8,7 @@ p3 = np.array([0, 0, 1])
 
 r0 = np.array([0, 0, 0])
 
-vector = np.array([0, 0, 1])
+normal_vector = np.cross(p1 - p2, p3 - p2)
 
 res_h = 32
 res_v = 24
