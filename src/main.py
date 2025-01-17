@@ -1,13 +1,20 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from definitions import pov, p1, p2, p3, r0
-from obj import get_obj_data
+from obj import Model, get_obj_data
 
-print(pov)
+print(f"Point of View: {pov}")
 
-print(p1)
-print(p2)
-print(p3)
-print(r0)
+print(f"Point 1: {p1}")
+print(f"Point 2: {p2}")
+print(f"Point 3: {p3}")
 
-get_obj_data('models/pyramid.obj')
+print(f"Plane Point: {r0}")
+
+obj = get_obj_data('models/pyramid.obj')
+
+print(f"Object Matrix: {obj.object_matrix}")
+print(f"Faces: {obj.faces}")
+print(f"Vertex Quantity: {obj.vertex_quantity}")
+print(f"Face Quantity: {obj.face_quantity}")
+print(f"Vertices per Face: {obj.vertices_per_face}")
