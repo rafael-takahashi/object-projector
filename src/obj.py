@@ -4,6 +4,8 @@ def get_obj_data(file_path):
     # Load the .obj file using trimesh
     mesh = trimesh.load_mesh(file_path)
 
+    mesh.show()
+
     # Get object data
     vertices = mesh.vertices
     vertice_quantity = len(vertices)
