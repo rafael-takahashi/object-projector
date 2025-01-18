@@ -3,7 +3,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
 
 from elements import pov, p1, p2, p3, r0, normal_vector, res_h, res_v, d, perspective_matrix
-from transformations import to_homogenous
+from transformations import object_to_projection
 from obj import Model, get_obj_data
 
 print(f"Point of View: {pov}")
@@ -28,10 +28,6 @@ print(f"Distance: {d}")
 
 print(f"Perspective Matrix: {perspective_matrix}")
 
-projection_points = []
-
-for point in obj.object_matrix:
-    projected_point = np.dot(perspective_matrix, to_homogenous(point))
-    projection_points.append(projected_point / projected_point[3])
+projection_points = object_to_projection(obj.object_matrix, perspective_matrix)
 
 print(f"Projection Points: {projection_points}")
