@@ -3,7 +3,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
 
 from elements import pov, p1, p2, p3, r0, normal_vector, res_h, res_v, d, perspective_matrix
-from transformations import object_to_projection
+from transformations import object_to_projection, calculate_window_limits
 from obj import Model, get_obj_data
 
 print(f"Point of View: {pov}")
@@ -31,3 +31,7 @@ print(f"Perspective Matrix: {perspective_matrix}")
 projection_points = object_to_projection(obj.object_matrix, perspective_matrix)
 
 print(f"Projection Points: {projection_points}")
+
+x_min, x_max, y_min, y_max = calculate_window_limits(projection_points)
+
+print(f"Image Limits: {x_min}, {x_max}, {y_min}, {y_max}")
