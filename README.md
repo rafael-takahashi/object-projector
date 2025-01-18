@@ -1,12 +1,9 @@
-# Projection System
+# Object projector
 
-Projection system implemented using python trimesh and matplotlib
+Simple algorithm that reads a .obj file and project it in an cartesian plane.
 
 ## Setup
 Firstly, install dependencies by running the following command:
 ```
 pip install -r requirements.txt
 ```
-
-## TODO
-For a detailed list of upcoming tasks, check out the [TODO file](TODO.md).
