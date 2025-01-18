@@ -14,7 +14,7 @@ print(f"Point 3: {p3}")
 
 print(f"Plane Point: {r0}")
 
-obj = get_obj_data('models/pyramid.obj')
+obj = get_obj_data('models/cube.obj')
 
 print(f"Object Matrix: {obj.object_matrix}")
 print(f"Faces: {obj.faces}")

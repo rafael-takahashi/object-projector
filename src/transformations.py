@@ -78,6 +78,6 @@ def window_to_viewport(projection_points):
 
     for point in projection_points:
         viewport_point = np.dot(window_to_viewport_matrix, to_homogenous(point))
-        viewport_points.append(np.array([round(viewport_point[0]), round(viewport_point[1])]))
+        viewport_points.append(np.array([int(viewport_point[0]), int(viewport_point[1])]))
 
     return viewport_points
