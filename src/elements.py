@@ -8,7 +8,7 @@ c = pov[2]
 
 p1 = np.array([1, 0, 0])
 p2 = np.array([0, 0, 0])
-p3 = np.array([0, 0, 1])
+p3 = np.array([0, 1, 0])
 
 r0 = np.array([0, 0, 0])
 
@@ -30,7 +30,7 @@ perspective_matrix = np.array([
     [d+a*nx, a*ny, a*nz, -a*d0],
     [b*nx, d+b*ny, b*nz, -b*d0],
     [c*nx, c*ny, d+c*nz, -c*d0],
-    [nx, ny, nz, 1]
+    [nx, ny, nz, -d1]
 ])
 
 res_h = 32

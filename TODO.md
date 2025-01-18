@@ -14,5 +14,6 @@
         - V -> Vx, Vy, Vz;
 - [x] Calcular d0, d1 e d;
 - [x] Calcular Matriz Perspectiva;
+- [x] Translação para a origem;
 - [ ] Coordenadas homogêneas;
 - [ ] Realizar a Transformação Janela-Viewport;
