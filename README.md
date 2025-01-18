@@ -7,3 +7,9 @@ Firstly, install dependencies by running the following command:
 ```
 pip install -r requirements.txt
 ```
+
+## Running
+You can run the program by executing:
+```
+python src/main.py
+```
