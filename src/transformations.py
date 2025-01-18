@@ -2,7 +2,7 @@ import numpy as np
 from elements import res_h, res_v
 
 def to_homogenous(coords):
-    return np.array([coords[0], coords[1], coords[2], 1])
+    return np.append(coords, 1)
 
 def object_to_projection(object_matrix, perspective_matrix):
     projection_points = []
