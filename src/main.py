@@ -15,7 +15,7 @@ print(f"Point 3: {p3}")
 
 print(f"Plane Point: {r0}")
 
-obj = get_obj_data('models/cube.obj')
+obj = get_obj_data('models/pyramid.obj')
 
 print(f"Object Matrix: {obj.object_matrix}")
 print(f"Faces: {obj.faces}")
@@ -42,5 +42,7 @@ sx, sy = calculate_scaling(x_min, x_max, y_min, y_max)
 print(f"Scaling: {sx}, {sy}")
 
 viewport_points = window_to_viewport(projection_points)
+
+print(f"Viewport Points: {viewport_points}")
 
 plot_projection(viewport_points, obj.faces)
