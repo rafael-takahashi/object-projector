@@ -15,3 +15,10 @@ def get_obj_data(file_path: str) -> Model:
     faces = mesh.faces
 
     return Model(object_matrix, faces)
+
+def print_obj_data(obj: Model):
+    print(f"Object Matrix:\n{obj.object_matrix}\n")
+    print(f"Faces:\n{obj.faces}\n")
+    print(f"Vertex Quantity: {obj.vertex_quantity}")
+    print(f"Face Quantity: {obj.face_quantity}")
+    print(f"Vertices per Face: {obj.vertices_per_face}\n")

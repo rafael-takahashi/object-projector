@@ -2,12 +2,9 @@ import numpy as np
 
 from geometry import to_homogenous
 
-viewport_width = float(input("Enter viewport width: "))
-viewport_height = float(input("Enter viewport height: "))
-
-u_max = viewport_width
+u_max = 32
 u_min = 0
-v_max = viewport_height
+v_max = 24
 v_min = 0
 
 def calculate_image_limits(projection_points):
