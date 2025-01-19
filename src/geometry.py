@@ -1,20 +1,18 @@
 import numpy as np
 
-pov = np.array([20, 10, 30])
+point_of_view = np.array([20, 10, 30])
+a = point_of_view[0]
+b = point_of_view[1]
+c = point_of_view[2]
 
-a = pov[0]
-b = pov[1]
-c = pov[2]
+r0 = np.array([0, 0, 0])
+x0 = r0[0]
+y0 = r0[1]
+z0 = r0[2]
 
 p1 = np.array([1, 0, 0])
 p2 = np.array([0, 0, 0])
 p3 = np.array([0, 1, 0])
-
-r0 = np.array([0, 0, 0])
-
-x0 = r0[0]
-y0 = r0[1]
-z0 = r0[2]
 
 normal_vector = np.cross(p1 - p2, p3 - p2)
 
@@ -33,5 +31,5 @@ perspective_matrix = np.array([
     [nx, ny, nz, -d1]
 ])
 
-res_h = 32
-res_v = 24
+def to_homogenous(coords):
+    return np.append(coords, 1)
