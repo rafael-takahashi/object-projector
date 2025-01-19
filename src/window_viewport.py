@@ -1,8 +1,9 @@
 import numpy as np
+
 from geometry import to_homogenous
 
-viewport_width = 32
-viewport_height = 24
+viewport_width = float(input("Enter viewport width: "))
+viewport_height = float(input("Enter viewport height: "))
 
 u_max = viewport_width
 u_min = 0

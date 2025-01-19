@@ -1,6 +1,7 @@
+import os
+import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-import numpy as np
 
 from geometry import perspective_matrix
 from obj import get_obj_data
@@ -8,7 +9,14 @@ from plot import plot_projection
 from projection import object_to_projection
 from window_viewport import window_to_viewport
 
-obj = get_obj_data('models/pyramid.obj')
+obj_name = input("Type your object name (e.g. cube.obj): ")
+file_path = os.path.join("models", obj_name)
+
+if not os.path.isfile(file_path):
+    print(f"{obj_name} does not exist in the models folder.")
+    exit()
+
+obj = get_obj_data(file_path)
 
 print(f"Object Matrix:\n{obj.object_matrix}")
 print(f"Faces:\n{obj.faces}")

@@ -1,4 +1,5 @@
 import numpy as np
+
 from geometry import to_homogenous
 
 def object_to_projection(object_matrix, perspective_matrix):
