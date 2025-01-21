@@ -26,8 +26,14 @@ def calculate_window_limits(projection_points):
     return window_x_min, window_x_max, window_y_min, window_y_max
 
 def calculate_scaling(x_min, x_max, y_min, y_max):
-    sx = round((u_max - u_min) / (x_max - x_min)) 
-    sy = round((v_max - v_min) / (y_max - y_min))
+    if x_max - x_min == 0:
+        sx = float('inf')
+    else:
+        sx = round((u_max - u_min) / (x_max - x_min)) 
+    if y_max - y_min == 0:
+        sy = float('inf')
+    else:
+        sy = round((v_max - v_min) / (y_max - y_min))
     
     return sx, sy
 
@@ -62,6 +68,6 @@ def window_to_viewport(projection_points):
 
     for point in projection_points:
         viewport_point = np.dot(window_to_viewport_matrix, to_homogenous(point))
-        viewport_points.append(np.array([int(viewport_point[0]), int(viewport_point[1])]))
+        viewport_points.append(np.array([viewport_point[0], viewport_point[1]]))
 
     return viewport_points

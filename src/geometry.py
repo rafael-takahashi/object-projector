@@ -10,9 +10,9 @@ x0 = r0[0]
 y0 = r0[1]
 z0 = r0[2]
 
-p1 = np.array([1, 0, 0])
-p2 = np.array([0, 0, 0])
-p3 = np.array([0, 1, 0])
+p1 = np.array([0, 0, 0])
+p2 = np.array([0, 1, 0])
+p3 = np.array([0, 0, 1])
 
 normal_vector = np.cross(p1 - p2, p3 - p2)
 
