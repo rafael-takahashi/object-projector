@@ -50,7 +50,7 @@ def get_parameters():
     print("")
 
     while True:
-        choose = input("Do you want to choose the point of view? [N/y]: ")
+        choose = input("Do you want to choose the viewport size? [N/y]: ")
         if (choose in exit_keys): 
             exit()
         elif (choose.lower() == "n" or choose.lower() == "" or choose.lower() == "y"):
